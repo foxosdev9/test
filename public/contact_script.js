@@ -1,3 +1,5 @@
+const workURL = 'https://newpro6.vercel.app/'
+
 document.getElementById('form').addEventListener('submit', e => {
     e.preventDefault();
     quickCheckValue(document.getElementById('email').value);
@@ -14,7 +16,7 @@ function quickCheckValue(value){
 };
 
 function sendEmailToDB(email){
-    fetch('http://localhost:3000/page/register-email', {
+    fetch(`${workURL}page/register-email`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
