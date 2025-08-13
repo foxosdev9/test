@@ -1,0 +1,9 @@
+extends home 
+
+block content
+   h3 please enter your address email : 
+   form#form(action="#", method="post") 
+      p.message 
+      input#email(type="email", name="email", placeholder='example@gmail.com')
+      input(type="submit", value="envoyee")
+   script(src="http://localhost:3000/contact_script.js")  

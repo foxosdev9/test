@@ -1,0 +1,14 @@
+extends home 
+
+mixin listItem(addressEmails)
+    each email in addressEmails  
+       .card  
+           li= email.email
+           li= email.date
+
+
+
+block content 
+    ul 
+      +listItem(emails)
+    
