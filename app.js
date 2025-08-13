@@ -1,5 +1,5 @@
-const ex = require('express');
-const app = ex();
+const express = require('express');
+const app = express();
 const path = require('path');
 const Email = require('./projects/models/EmailModel');
 const viewRouter = require('./projects/routes/viewRouter');
@@ -8,12 +8,14 @@ const viewRouter = require('./projects/routes/viewRouter');
 app.set('view engine', 'pug');
 app.set('views', path.join(__dirname, 'views'));
 
-app.get('/home', (req, res) => {
+app.use(express.static('public'));
+app.use(express.json());
+
+app.get('/', (req, res) => {
     res.status(200).render('home');
 });
 
-app.use(ex.static('public'));
-app.use(ex.json());
+
 
 // __________ ROUTES _____________
 
